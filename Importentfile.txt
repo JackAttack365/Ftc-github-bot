@@ -7,5 +7,6 @@ Please enter below this line the name of the text file with all emails
 please enter below this line the google sheets location
 
 please enter below this line the name of the parts list file
-
-please enter below this line the role id for use of spefic commands.
+Testings
+please enter below this line the role id for those who will get dms.
+1258922386234019933

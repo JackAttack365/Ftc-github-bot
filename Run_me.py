@@ -15,13 +15,14 @@ Master_file_content = Master_file.readlines()
 Bot_token:str = str(Master_file_content[3]) #reads the 4th line of the file cause arrays start at 0
 
 #the txt file whare parts are saved.
-Parts_list_file = Master_file_content[10]
+Parts_list_file:str = str(Master_file_content[9])
+Parts_list_file = Parts_list_file.strip('\n')
 
 # this is the google sheets link that the bot puts the requested parts in.
 gsheets_parts_list = ''
 
 #This is the role id that allows certin commands to be used.
-ROLE_ID:int = None
+ROLE_ID:int = int(Master_file_content[11])
 
 # Creates a instince of the bot
 intents = discord.Intents.default()
@@ -50,11 +51,11 @@ async def _but(interaction: discord.Interaction, argument: str):
     name = convert_userid_to_name(interaction.user.id)
     message = f"{name} requested we buy this part: {argument}"
     
-    #for google docs
-    add_row_to_sheet(gsheets_parts_list,message)
+    #for google docs right noow is disabled
+    #add_row_to_sheet(gsheets_parts_list,message)
 
     # Create part lists
-    with open('Part list.txt', 'a') as f:
+    with open(Parts_list_file, 'a') as f:
         f.write(f"{message}\n")
     
     # Send a message to each member with the role
@@ -75,8 +76,8 @@ async def upload_command(interaction: discord.Interaction):
     guild = interaction.guild
     channel = guild.get_channel(1210415444037603359)  # Replace CHANNEL_ID with your channel ID
 
-    with open('Part list.txt', 'rb') as fp:
-        await channel.send(file=discord.File(fp, 'Part list.txt'))
+    with open(Parts_list_file, 'rb') as fp:
+        await channel.send(file=discord.File(fp, Parts_list_file))
     
     await interaction.response.send_message("Request log uploaded.", ephemeral=True)
 
