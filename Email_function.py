@@ -5,7 +5,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 def Email_people_func(file):
-    li = ["jdhbatman@gmail.com", "josha26@icstudents.org"]
+    li = [""]
 
     for dest in li:
         try:

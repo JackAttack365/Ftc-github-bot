@@ -1,0 +1,11 @@
+Welcome to this very importent file (Do not share this file) to get the bot running please enter all the fields below.
+
+Please enter below this line the bot token
+MTI1ODU5NDY4OTE3MTMyOTAzNQ.Gb19NF.kEzIGrJufPls8z6ONMj9_8xxsCsX0tBNr96PEk
+Please enter below this line the name of the text file with all emails
+
+please enter below this line the google sheets location
+
+please enter below this line the name of the parts list file
+
+please enter below this line the role id for use of spefic commands.

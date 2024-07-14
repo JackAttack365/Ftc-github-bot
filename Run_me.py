@@ -5,14 +5,25 @@ from convert_name_function import convert_userid_to_name
 from Email_function import Email_people_func
 from googledocsfunc import add_row_to_sheet
 
-def replace_backslashes_with_forward_slashes(path):
-    return path.replace("\\", "/")
+#this is the file that containes all passwords and other settings
+Master_file = open("Importentfile.txt")
 
-path_to_Parts_list = replace_backslashes_with_forward_slashes("C:\\Users\\jdhba\\Desktop\\yes\\Part list.txt")
-#this is for the google docs link
+#and this puts it so that i can read it as an list
+Master_file_content = Master_file.readlines()
+
+#This is the bot token
+Bot_token:str = str(Master_file_content[3]) #reads the 4th line of the file cause arrays start at 0
+
+#the txt file whare parts are saved.
+Parts_list_file = Master_file_content[10]
+
+# this is the google sheets link that the bot puts the requested parts in.
 gsheets_parts_list = ''
 
-# Create an instance of a bot
+#This is the role id that allows certin commands to be used.
+ROLE_ID:int = None
+
+# Creates a instince of the bot
 intents = discord.Intents.default()
 intents.members = True  # Ensure the bot can read member information
 intents.message_content = True
@@ -20,9 +31,6 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Define a tree for the app commands (slash commands)
 tree = bot.tree
-
-# Role ID to use commands
-ROLE_ID = 912849869318807583 #co owern role
 
 # Define the slash command for requesting a part
 @tree.command(
@@ -78,7 +86,7 @@ async def upload_command(interaction: discord.Interaction):
     description="Emails the part list to the adult and youth team leads"
 )
 async def Email_people(interaction: discord.Interaction):
-    Email_people_func(path_to_Parts_list)
+    Email_people_func(Parts_list_file)
     await interaction.response.send_message("Sent the email", ephemeral=True)
 
 @bot.event
@@ -86,7 +94,7 @@ async def on_ready():
     await tree.sync()
     print(f"Logged in as {bot.user}")
 
-# Text-based commands
+#Auto mod
 @bot.event
 async def on_message(message):
     if message.author == bot.user:  # Check if the author of the message is the bot itself
@@ -95,9 +103,10 @@ async def on_message(message):
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
 
-    # Append message to a text file
-    with open('message_log.txt', 'a') as f:
-        f.write(f"{message.author.name}: {message.content}\n")
+    #planed to be part of the auto mod currently unused
+    if False:
+        with open('message_log.txt', 'a') as f:
+            f.write(f"{message.author.name}: {message.content}\n")
 
 #put the token blow this and yes i know hard coded tokens are bad but im lazy
-bot.run("")
+bot.run(Bot_token)
