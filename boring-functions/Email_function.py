@@ -4,14 +4,14 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
-def Email_people_func(file):
-    li = [""]
+def Email_people_func(file,email_list,sender,password):
+    li = email_list
 
     for dest in li:
         try:
             # Create a multipart message container
             msg = MIMEMultipart()
-            msg['From'] = "thunderbots22064@gmail.com"
+            msg['From'] = sender
             msg['To'] = dest
             msg['Subject'] = "Automated part list"
 
@@ -29,9 +29,9 @@ def Email_people_func(file):
             # Connect to SMTP server and send email
             s = smtplib.SMTP('smtp.gmail.com', 587)
             s.starttls()
-            s.login("thunderbots22064@gmail.com", "qvfdijeccnvwfuby")
+            s.login(sender, password)
             text = msg.as_string()
-            s.sendmail("thunderbots22064@gmail.com", dest, text)
+            s.sendmail(sender, dest, text)
             s.quit()
 
             print(f"Sent email with attachment to {dest}")
