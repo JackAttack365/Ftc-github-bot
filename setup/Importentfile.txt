@@ -3,7 +3,7 @@ Welcome to this very importent file (Do not share this file) to get the bot runn
 Please enter below this line the bot token
 
 Please enter below this line the name of the text file with all emails
-
+email_list.txt
 please enter below this line the google sheets location
 
 please enter below this line the name of the parts list file
