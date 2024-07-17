@@ -6,7 +6,7 @@ def add_row_to_sheet(sheet_url, string_to_add):
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
     
     # Add your credentials here
-    creds = ServiceAccountCredentials.from_json_keyfile_name("google sheets token\\noble-sum-428623-d2-7bee39b502f8.json", scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name("jason_files\GoogleSheets.json", scope)
     client = gspread.authorize(creds)
     
     # Open the Google Sheet

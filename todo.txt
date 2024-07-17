@@ -1,0 +1,1 @@
+build a time line commad that has a input for what waws done then writes it to a txt and maybe a google sheet

@@ -1,0 +1,238 @@
+{
+    "awards": [
+      {
+        "awardId": 1,
+        "name": "Judges' Choice Award",
+        "description": "The Judges' Choice Award is given at the discretion of the Judges to a team they have encountered whose unique efforts, performance or dynamics merit recognition, yet the team does not fit into any of the existing award categories.",
+        "forPerson": false
+      },
+      {
+        "awardId": 1,
+        "name": "Judges' Choice Award",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 2,
+        "name": "Compass Award",
+        "description": "The Compass Award recognizes an adult coach or mentor who has given outstanding guidance and support for a \u003Ci\u003EFIRST\u003C/i\u003E Tech Challenge team throughout the year. The winner of the Compass Award is determined from candidates nominated by student team members, via a 40-60 second video, highlighting how their mentor has helped them become an outstanding team and has truly demonstrated what it means to be a Gracious Professional.",
+        "forPerson": true
+      },
+      {
+        "awardId": 3,
+        "name": "Promote Award",
+        "description": "The Promote Award is given to the team that is most successful in creating a compelling message for the public and working to change our culture and celebrate science, technology, engineering and math. The video submission was evaluated by the Judges to determine the winner of this award. Teams must present a thoughtful and high-quality video which best exhibits this year's topic of: \u003Cb\u003E&quot;The best thing about \u003Ci\u003EFIRST\u003C/i\u003E Tech Challenge is…&quot;\u003C/b\u003E",
+        "forPerson": false
+      },
+      {
+        "awardId": 4,
+        "name": "Control Award",
+        "description": "The Control Award celebrates the team that demonstrates innovative thinking in the control system to solve game challenges such as autonomous operation, enhancing mechanical systems with intelligent control, or using sensors to achieve better results on the field.",
+        "forPerson": false
+      },
+      {
+        "awardId": 5,
+        "name": "Motivate Award",
+        "description": "The team that receives the Motivate Award celebrates the culture of \u003Ci\u003EFIRST\u003C/i\u003E and clearly shows what it means to be a team. This award celebrates the team that represents the essence of the \u003Ci\u003EFIRST\u003C/i\u003E Tech Challenge competition through team building, team spirit, and displayed enthusiasm. This is a team who makes a collective effort to make \u003Ci\u003EFIRST\u003C/i\u003E known throughout their school and community and sparks others to embrace the culture of \u003Ci\u003EFIRST\u003C/i\u003E.",
+        "forPerson": false
+      },
+      {
+        "awardId": 6,
+        "name": "Design Award",
+        "description": "The Design Award expands on this year's challenge, inspiring teams to incorporate industrial design into their robots. These elements can be shown in the simplicity of the design as it applies to the tasks, the look and feel of the robot in how the design allows us to think of robots in new ways. The design aspect must serve a function - but should also differentiate the robot in a unique fashion.",
+        "forPerson": false
+      },
+      {
+        "awardId": 7,
+        "name": "Innovate Award sponsored by RTX",
+        "description": "The Innovate Award sponsored by RTX celebrates a team that has the ingenuity and inventiveness to make their designs come to life. This award is given to the team that the Judges feel has the most innovative and creative robot design solution to the FIRST Tech Challenge game. Elements of this award include elegant design, robustness and 'out of the box' thinking.\u003Cbr/\u003E\u003Cbr/\u003EThis award may address the design of the whole robot or some sub-assembly component of the robot. The creative component needs to work consistently, but a robot does not have to work all of the time during matches to be considered for this award. The team's engineering portfolio showed the design of the component(s) and the team's robot, and clearly explains how the team arrived at their solution.",
+        "forPerson": false
+      },
+      {
+        "awardId": 8,
+        "name": "Connect Award",
+        "description": "The Connect Award is presented to the team that the Judges feel most connected with their local Science, Technology, Engineering, and Math (STEM) community. A true \u003Ci\u003EFIRST\u003C/i\u003E team is more than the sum of its parts and recognizes that engaging their local STEM community plays an essential part in their success. The recipient of this award is recognized for helping the community understand \u003Ci\u003EFIRST\u003C/i\u003E, the \u003Ci\u003EFIRST\u003C/i\u003E Tech Challenge, and the team itself. In addition, this team aggressively seeks and recruits engineers and explores the opportunities available in the world of engineering, science, and technology.",
+        "forPerson": false
+      },
+      {
+        "awardId": 9,
+        "name": "Think Award",
+        "description": "The Think Award is given to the team that the Judges feel best reflects the journey of the engineering design process. The engineering portfolio is the key reference for Judges to help them identify the most deserving team. This team's engineering portfolio focused on the design and build stage of the team's Robot and exemplified their journey as a team and engineers.",
+        "forPerson": false
+      },
+      {
+        "awardId": 10,
+        "name": "Dean's List Semi-Finalists",
+        "description": "\u003Ci\u003EFIRST\u003C/i\u003E Dean's List Semi-Finalists are outstanding student leaders whose passion for and effectiveness at embodying \u003Ci\u003EFIRST\u003C/i\u003E ideals is exemplary. These students were nominated by their teams for their direct contributions and impact on others - exemplifying leadership and commitment, on their \u003Ci\u003EFIRST\u003C/i\u003E Tech Challenge team, in their school, and in their community. \u003Ci\u003EFIRST\u003C/i\u003E Dean's List Semi-Finalists, recognized here today, will be considered within their state/region for the two spots as Dean's List Finalists.",
+        "forPerson": true
+      },
+      {
+        "awardId": 10,
+        "name": "Dean's List Finalists",
+        "description": "\u003Ci\u003EFIRST\u003C/i\u003E Dean's List Finalists are outstanding student leaders whose passion for and effectiveness at embodying \u003Ci\u003EFIRST\u003C/i\u003E ideals is exemplary. These students were nominated by their teams for their direct contributions and impact on others – exemplifying leadership and commitment, on their \u003Ci\u003EFIRST\u003C/i\u003E Tech Challenge team, in their school, and in their community. \u003Ci\u003EFIRST\u003C/i\u003E Dean's List Finalists, recognized here today, will represent (insert region) in the running for the ten Dean's List Winner spots.",
+        "forPerson": true
+      },
+      {
+        "awardId": 10,
+        "name": "Dean's List Winner",
+        "description": null,
+        "forPerson": true
+      },
+      {
+        "awardId": 11,
+        "name": "Inspire Award",
+        "description": "The Inspire Award is presented to the team that the Judges felt truly embodied the 'challenge' of the \u003Ci\u003EFIRST\u003C/i\u003E Tech Challenge program. The team that receives this award is a strong ambassador for \u003Ci\u003EFIRST\u003C/i\u003E programs and works to promote \u003Ci\u003EFIRST\u003C/i\u003E and make it loud in their community. The team that receives this award has performed well in all Judging categories and was chosen by the Judges as a model \u003Ci\u003EFIRST\u003C/i\u003E Tech Challenge team both on and off the playing field. This team shares their experiences, enthusiasm and knowledge with other teams, sponsors, their community, and the Judges. Working as a unit, this team will have shown success in performing the task of designing and building a robot.",
+        "forPerson": false
+      },
+      {
+        "awardId": 12,
+        "name": "Finalist Alliance",
+        "description": "Our Finalist Alliance:",
+        "forPerson": false
+      },
+      {
+        "awardId": 12,
+        "name": "Championship Finalist Alliance",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 12,
+        "name": "Division Finalist Alliance",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 13,
+        "name": "Winning Alliance",
+        "description": "Our Winning Alliance:",
+        "forPerson": false
+      },
+      {
+        "awardId": 13,
+        "name": "Championship Winning Alliance",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 13,
+        "name": "Division Winning Alliance",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 14,
+        "name": "Top Ranked",
+        "description": "Top Ranked Teams:",
+        "forPerson": false
+      },
+      {
+        "awardId": 15,
+        "name": "Semifinalist",
+        "description": "Innovation Challenge Semifinalists",
+        "forPerson": false
+      },
+      {
+        "awardId": 16,
+        "name": "Finalist",
+        "description": "Innovation Challenge Finalists",
+        "forPerson": false
+      },
+      {
+        "awardId": 17,
+        "name": "Winner",
+        "description": "Innovation Challenge Winner",
+        "forPerson": false
+      },
+      {
+        "awardId": 18,
+        "name": "Volunteer of the Year",
+        "description": null,
+        "forPerson": true
+      },
+      {
+        "awardId": 19,
+        "name": "Volunteer Award",
+        "description": "",
+        "forPerson": true
+      },
+      {
+        "awardId": 22,
+        "name": "Division Finalist Alliance",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 22,
+        "name": "Division Finalist Alliance",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 23,
+        "name": "Division Winning Alliance",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 23,
+        "name": "Division Winning Alliance",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 102,
+        "name": "Compass Award Finalist",
+        "description": null,
+        "forPerson": true
+      },
+      {
+        "awardId": 103,
+        "name": "Promote Award Finalist",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 104,
+        "name": "Control Award sponsored by Arm, Inc. Finalist",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 105,
+        "name": "Motivate Award Finalist",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 106,
+        "name": "Design Award Finalist",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 107,
+        "name": "Innovate Award sponsored by Raytheon Technologies Finalist",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 108,
+        "name": "Connect Award Finalist",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 109,
+        "name": "Think Award Finalist",
+        "description": null,
+        "forPerson": false
+      },
+      {
+        "awardId": 111,
+        "name": "Inspire Award Finalist",
+        "description": null,
+        "forPerson": false
+      }
+    ]
+  }

@@ -1,5 +1,0 @@
-discord.ext
-discord
-smtplib
-email
-gspread

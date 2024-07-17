@@ -1,0 +1,239 @@
+{
+    "schedule": [
+        {
+            "description": "Qualification 1",
+            "field": "1",
+            "tournamentLevel": "QUALIFICATION",
+            "startTime": "2023-10-21T09:30:00",
+            "series": 0,
+            "matchNumber": 1,
+            "teams": [
+                {
+                    "teamNumber": 4153,
+                    "displayTeamNumber": "4153",
+                    "station": "Blue2",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "Neptune",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 15157,
+                    "displayTeamNumber": "15157",
+                    "station": "Blue1",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "IFC",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 9513,
+                    "displayTeamNumber": "9513",
+                    "station": "Red2",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "System Overload",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 25,
+                    "displayTeamNumber": "25",
+                    "station": "Red1",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "Rock N' Roll Robots",
+                    "surrogate": false,
+                    "noShow": false
+                }
+            ],
+            "modifiedOn": "2023-11-06T16:39:14.232"
+        },
+        {
+            "description": "Qualification 5",
+            "field": "1",
+            "tournamentLevel": "QUALIFICATION",
+            "startTime": "2023-10-21T10:03:00",
+            "series": 0,
+            "matchNumber": 5,
+            "teams": [
+                {
+                    "teamNumber": 4153,
+                    "displayTeamNumber": "4153",
+                    "station": "Blue1",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "Neptune",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 4628,
+                    "displayTeamNumber": "4628",
+                    "station": "Blue2",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "Suit Bots",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 15157,
+                    "displayTeamNumber": "15157",
+                    "station": "Red2",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "IFC",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 4625,
+                    "displayTeamNumber": "4625",
+                    "station": "Red1",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "Kings and Queens",
+                    "surrogate": false,
+                    "noShow": false
+                }
+            ],
+            "modifiedOn": "2023-11-06T16:39:14.22"
+        },
+        {
+            "description": "Qualification 7",
+            "field": "1",
+            "tournamentLevel": "QUALIFICATION",
+            "startTime": "2023-10-21T10:27:00",
+            "series": 0,
+            "matchNumber": 7,
+            "teams": [
+                {
+                    "teamNumber": 9513,
+                    "displayTeamNumber": "9513",
+                    "station": "Blue2",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "System Overload",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 15157,
+                    "displayTeamNumber": "15157",
+                    "station": "Blue1",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "IFC",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 8624,
+                    "displayTeamNumber": "8624",
+                    "station": "Red2",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "Spectrum",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 7553,
+                    "displayTeamNumber": "7553",
+                    "station": "Red1",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "Team Loki",
+                    "surrogate": true,
+                    "noShow": false
+                }
+            ],
+            "modifiedOn": "2023-11-06T16:39:14.204"
+        },
+        {
+            "description": "Qualification 11",
+            "field": "1",
+            "tournamentLevel": "QUALIFICATION",
+            "startTime": "2023-10-21T11:00:00",
+            "series": 0,
+            "matchNumber": 11,
+            "teams": [
+                {
+                    "teamNumber": 4947,
+                    "displayTeamNumber": "4947",
+                    "station": "Red1",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "Cougarobotics Alpha",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 4625,
+                    "displayTeamNumber": "4625",
+                    "station": "Red2",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "Kings and Queens",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 15157,
+                    "displayTeamNumber": "15157",
+                    "station": "Blue1",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "IFC",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 25,
+                    "displayTeamNumber": "25",
+                    "station": "Blue2",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "Rock N' Roll Robots",
+                    "surrogate": false,
+                    "noShow": false
+                }
+            ],
+            "modifiedOn": "2023-11-06T16:39:14.264"
+        },
+        {
+            "description": "Qualification 12",
+            "field": "1",
+            "tournamentLevel": "QUALIFICATION",
+            "startTime": "2023-10-21T11:12:00",
+            "series": 0,
+            "matchNumber": 12,
+            "teams": [
+                {
+                    "teamNumber": 7553,
+                    "displayTeamNumber": "7553",
+                    "station": "Red1",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "Team Loki",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 5218,
+                    "displayTeamNumber": "5218",
+                    "station": "Blue2",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "Javabots",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 5498,
+                    "displayTeamNumber": "5498",
+                    "station": "Blue1",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "Cougarobotics Omega",
+                    "surrogate": false,
+                    "noShow": false
+                },
+                {
+                    "teamNumber": 15157,
+                    "displayTeamNumber": "15157",
+                    "station": "Red2",
+                    "team": "Database.FTCCloud.Entities.Team",
+                    "teamName": "IFC",
+                    "surrogate": false,
+                    "noShow": false
+                }
+            ],
+            "modifiedOn": "2023-11-06T16:39:14.252"
+        }
+    ]
+}
