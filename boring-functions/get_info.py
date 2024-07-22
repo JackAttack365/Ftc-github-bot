@@ -6,6 +6,7 @@ def get_info(number_in_array:int):
     Master_file_content = Master_file.readlines()
 
     loacl_var:str = Master_file_content[number_in_array]
+<<<<<<< HEAD
     loacl_var:str = str(loacl_var.strip("\n"))
     return loacl_var
 
@@ -18,4 +19,7 @@ def get_sheets(number_in_array:int,server_name:str):
 
     loacl_var:str = Team_sheets[number_in_array]
     loacl_var:str = str(loacl_var.strip("\n"))
+=======
+    loacl_var:str = str(loacl_var.strip('\n'))
+>>>>>>> d158eb7ec0519de229885686d10d8820cd23ed98
     return loacl_var

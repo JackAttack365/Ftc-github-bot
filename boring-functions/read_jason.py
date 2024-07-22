@@ -8,6 +8,7 @@ def find_matches(team_number):
     # Find matches for the specified team number
     matches = []
     for match in schedule["schedule"]:
+<<<<<<< HEAD
         # Find the station of the specified team
         team_info = next((team for team in match["teams"] if team["teamNumber"] == team_number), None)
         if team_info:
@@ -29,6 +30,10 @@ def find_matches(team_number):
                 f"{team["teamName"]} (Team #{team["teamNumber"]})"
                 for team in match["teams"] if team["station"] == partner_station
             ]
+=======
+        if any(team['teamNumber'] == team_number for team in match['teams']):
+            partner_teams = [team['teamName'] for team in match['teams'] if team['teamNumber'] != team_number]
+>>>>>>> d158eb7ec0519de229885686d10d8820cd23ed98
             matches.append({
                 "description": match["description"],
                 "partners": partner_teams
@@ -37,6 +42,7 @@ def find_matches(team_number):
     # Create a string to hold the match information
     match_results = []
     for match in matches:
+<<<<<<< HEAD
         match_results.append(f"Match Description: {match["description"]}")
         match_results.append(f"Partner Team: {", ".join(match["partners"])}\n")
 
@@ -44,3 +50,11 @@ def find_matches(team_number):
 
 # Example usage:
 # print(find_matches(22064))  # Replace 22064 with the actual team number you"re interested in
+=======
+        match_results.append(f"Match Description: {match['description']}")
+        match_results.append(f"Partner Teams: {', '.join(match['partners'])}\n")
+
+    return "\n".join(match_results)
+
+# Example usage
+>>>>>>> d158eb7ec0519de229885686d10d8820cd23ed98

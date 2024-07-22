@@ -3,7 +3,21 @@ Welcome to this very importent file (Do not share this file) to get the bot runn
 Please enter below this line the bot token
 
 
+<<<<<<< HEAD
 Please enter below this line the user name for the ftc api
 
 
 Please enter below this line the password for the ftc api
+=======
+please enter below this line the google sheets time line location
+
+
+please enter below this line the google sheets parts list link
+
+
+Please enter below this line the user name for the ftc api
+
+
+Please enter below this line the password for the ftc api
+
+>>>>>>> d158eb7ec0519de229885686d10d8820cd23ed98
