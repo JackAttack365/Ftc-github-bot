@@ -3,57 +3,25 @@ from discord import app_commands
 from discord.ext import commands
 import sys
 import os
+from datetime import datetime
+import json
+import asyncio
 #import custom functions below other above
-sys.path.append(os.path.join(os.path.dirname(__file__), 'boring-functions'))
+sys.path.append(os.path.join(os.path.dirname(__file__), "boring-functions"))
 from convert_name_function import convert_userid_to_name # type: ignore
-from Email_function import Email_people_func # type: ignore
 from googledocsfunc import add_row_to_sheet # type: ignore
-
-#this is for if the bot should dm
-send_to_users = True
+from get_info import get_info,get_sheets #type: ignore gets information from the master file and it reutrns a streing so make sure to type cast
+from fetch_and_find_matches import get_events_into_json, find_matches,get_current_event,find_match_nums #type: ignore
+from set_up import set_up #type: ignore gets information from the master file and it reutrns a streing so make sure to type cast
 
 #whare logs are stored
 log_directory = "logs"  
 
-#this is the file that containes all passwords and other settings
-Master_file = open("setup\Importentfile.txt")
-
-#and this puts it so that i can read it as an list
-Master_file_content = Master_file.readlines()
-
 #This is the bot token
-Bot_token:str = str(Master_file_content[3]) #reads the 4th line of the file cause arrays start at 0
-
-#the txt file whare parts are saved.
-Parts_list_file:str = str(Master_file_content[9])
-Parts_list_file = str(Parts_list_file.strip('\n'))
-Parts_list_file = os.path.join(log_directory, Parts_list_file)
-
-#whare to store the message_log
-message_log:str = "message_log"
-message_log = str(message_log.strip('\n'))
-message_log = os.path.join(log_directory, message_log)
+Bot_token:str = get_info(3) #reads the 4th line of the file cause arrays start at 0
 
 # this is the google sheets link that the bot puts the requested parts in.
-gsheets_parts_list:str = str(Master_file_content[15])
 
-#for the email list
-email_file = open("setup\email_list.txt")
-email_list = email_file.readlines()
-email_list.pop(0) #removes the instrions on the first line
-
-#this is for the email and password
-sender = str(Master_file_content[17])
-sender = str(sender.strip('\n'))
-
-password = str(Master_file_content[19])
-password = str(password.strip('\n'))
-
-#This is the role id that allows certin commands to be used.
-ROLE_ID:int = int(Master_file_content[11])
-
-#this is whare the bot will upload the file
-channel_id = int(Master_file_content[13])
 
 # Creates a instince of the bot
 intents = discord.Intents.default()
@@ -70,85 +38,145 @@ tree = bot.tree
     description="A slash command to request a part"
 )
 @app_commands.describe(argument="The part to be requested")
-async def _but(interaction: discord.Interaction, argument: str):
-    # Fetch the guild (server) and the role
-    guild = interaction.guild
-    role = guild.get_role(ROLE_ID)
-    
-    if role is None:
-        await interaction.response.send_message(f"Role with ID {ROLE_ID} not found.", ephemeral=False)
-        return
+async def _but(interaction: discord.Interaction, argument: str):   
     
     name = convert_userid_to_name(interaction.user.id)
     message = f"{name} requested we buy this part: {argument}"
     
-    #for google docs right now is disabled
+    server_name = interaction.guild.name
+    gsheets_parts_list = get_sheets(0,server_name)
+    
     add_row_to_sheet(gsheets_parts_list,message)
 
-    # Create part lists
-    with open(Parts_list_file, 'a') as f:
-        f.write(f"{message}\n")
-    
-    # Send a message to each member with the role
-    if send_to_users == True:
-        for member in role.members:
-            try:
-                await member.send(message)
-            except discord.Forbidden:
-                await interaction.channel.send(f"Could not send a message to {member.mention}.", delete_after=10)
-        
-    await interaction.response.send_message(f"Message sent to all members with the role {role.name} and added to the google sheets.", ephemeral=False)
+    await interaction.response.send_message(f"Message added to the google sheets.\n{gsheets_parts_list}", ephemeral=False)
 
-# Define the slash command for uploading the request log
+
+
+#time line func
 @tree.command(
-    name="upload-parts-list",
-    description="Uploads the request txt file"
+    name="timeline",
+    description="Creates a marker on a timeline"
 )
-async def upload_command(interaction: discord.Interaction):
-    guild = interaction.guild
-    channel = guild.get_channel(channel_id)  # Replace CHANNEL_ID with your channel ID
-
-    with open(Parts_list_file, 'rb') as fp:
-        await channel.send(file=discord.File(fp, "Parts_list_file"))
+@app_commands.describe(argument="What happened")
+async def timeline(interaction: discord.Interaction, argument: str):
+    # Fetch the guild (server) and the role
     
-    await interaction.response.send_message("Request log uploaded.", ephemeral=False)
+    
+    
+    name = interaction.user.nick
+    the_time = datetime.now()
+    year = the_time.year
+    month = the_time.month
+    day = the_time.day
+    message = f"{name} said this happend: {argument} on {year}/{month}/{day}"
+    
+    server_name = interaction.guild.name
+    gsheets_time_line = get_sheets(1,server_name)
 
-#allows and disalows the bot to send dms
+
+    #for google docs right now is disabled
+    add_row_to_sheet(gsheets_time_line,message)
+        
+    await interaction.response.send_message(f"The time line has been updated at the google sheets.\n{gsheets_time_line}", ephemeral=False)
+
+@tree.command(
+    name="start_the_clock",
+    description="Creates a reminder"
+)
+@app_commands.describe(team_num="Your team number",
+                       current_match_arg = "what match is it?"
+                       )
+
+async def start_the_clock(interaction: discord.Interaction, team_num: str, current_match_arg: int):
+    await interaction.response.send_message("Starting timer...", ephemeral=False)
+    await interaction.followup.send(find_matches(team_num))
+    season: int = 2023
+    username = get_info(6)
+    password = get_info(9)
+    
+    get_events_into_json(season, username, password, team_num)
+    get_current_event(season, username, password, team_num)
+    
+    Matches = find_match_nums(team_num)
+    greatest_match = max(Matches)
+    current_match = current_match_arg
+    
+    while True:
+        if current_match > greatest_match:
+            await interaction.followup.send("the timer has ended.")
+            break
+            
+        elif current_match + 1 in Matches:
+            await interaction.followup.send(f"Hey match {current_match} is coming up!", ephemeral=False)
+            current_match = current_match + 1
+            await asyncio.sleep(130) 
+            print (current_match)
+        else:
+            await asyncio.sleep(130) 
+            print(current_match)
+            current_match = current_match + 1
+        
+
+
+#get events
+@tree.command(
+    name="get_schdule",
+    description="Gets the most resent schdule and sends a message with it"
+)
+@app_commands.describe(
+    team_num="the number of your team"
+)
+async def get_events(interaction: discord.Interaction, team_num: str):
+    await interaction.response.send_message("hang on one sec")
+    season: int = 2023
+    username = get_info(6)
+    password = get_info(9)
+    get_events_into_json(season,username,password,team_num)
+    get_current_event(season, username, password,team_num)
+    print(find_match_nums(team_num))
+    await interaction.followup.send(find_matches(team_num))
+
+
+#help command
 @tree.command(
     name="help",
-    description="Makes it so the bot will either dm when some one requests a part or wont"
+    description="Shows what all comands do in depth"
 )
 async def Help(interaction: discord.Interaction):
     
-    await interaction.response.send_message(f"ahh sorry code is currently broken gotta change it in the set up file", ephemeral=True)
+    await interaction.response.send_message(f"Welcome To alfradio 3.0 \nIf you need more help join the help server at https://discord.gg/6PVDP9EJvB\nOr you can dig through my source code here https://github.com/blueofficer/Ftc-github-bot\nTo get started use /setup", ephemeral=False)
 
-# Define the slash command for emailing the part list
+#the set up command
 @tree.command(
-    name="email_partslist",
-    description="Emails the part list to the adult and youth team leads"
+    name="setup",
+    description="The setup command for the bot"
 )
-async def Email_people(interaction: discord.Interaction):
-    Email_people_func(Parts_list_file,email_list,sender,password)
-    await interaction.response.send_message("Sent the email", ephemeral=False)
+async def the_set_up(interaction: discord.Interaction):
+    server_name:str = str(interaction.guild.name)
+    file_path = f"team_files\\{server_name}\\{server_name}google_seets.txt"
+    if os.path.exists(file_path):
+        await interaction.response.send_message("setup does not need to be run")
+    else:
+        await interaction.response.send_message(f"Creating the google sheets.......", ephemeral=False)
+        set_up(server_name)
+        await interaction.followup.send(f"Created the google sheets", ephemeral=False)
 
 @bot.event
 async def on_ready():
-    await tree.sync()
+    #await tree.sync()
     print(f"Logged in as {bot.user}")
+    for guild in bot.guilds:
+        print(f"Server: {guild.name}")
+
 
 #Auto mod
-log_messages:bool = bool(Master_file_content[21])
 @bot.event
 async def on_message(message):
     if message.author == bot.user:  # Check if the author of the message is the bot itself
         return
 
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
-
-    #planed to be part of the auto mod currently unused
-    if log_messages:
-        with open(message_log, 'a') as f:
-            f.write(f"{message.author.name}: {message.content}\n")
-
+    if message.content.startswith("$thank you"):
+        await message.channel.send("Thank you teams Electric Bacon (13733), Screaming Eagles(13002), Giggle Pickle(24253) for allowing me to build this bot and having them test it. :D")
+    elif message.content.startswith("ester"):
+        await message.channel.send("Thank you teams Electric Bacon (13733), Screaming Eagles(13002), Giggle Pickle(24253) for allowing me to build this bot and having them test it. :D")
 bot.run(Bot_token)

@@ -2,21 +2,8 @@ Welcome to this very importent file (Do not share this file) to get the bot runn
 
 Please enter below this line the bot token
 
-Please enter below this line the name of the text file with all emails
 
-please enter below this line the google sheets location
+Please enter below this line the user name for the ftc api
 
-please enter below this line the name of the parts list file
-Parts_list
-please enter below this line the role id for those who will get dms.
 
-please enter below this line the channel id for whare to upload the .txt file
-
-please enter below this line the google sheets link
-
-please enter below this line the email for the sender
-
-please enter below this line the password for the email sender
-
-please enter below this line True or False (cap sensitve) weither messages should be logged
-False
+Please enter below this line the password for the ftc api
